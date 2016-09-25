@@ -37,7 +37,7 @@ function renderCrossword(words, answer)
   var sizeRight = 0;
   for (var i = 0; i < answer.length; i++) {
     matchLocation = localizedIndexOf(words[i], answer[i]); //words[i].indexOf(answer[i])
-    
+
     wordArray.push(new Word(words[i], matchLocation));
     if(sizeLeft < matchLocation)
     {
@@ -63,7 +63,7 @@ function fillWords(words, numColumns, answerColumn)
         row.children().eq(j).text(words[i].word[numChar]);
         numChar++;
       } else {
-        row.children().eq(j).addClass("hidden");
+        row.children().eq(j).addClass("cw-hidden");
       }
     }
   }
