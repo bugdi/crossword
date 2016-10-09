@@ -20,6 +20,7 @@ function renderTable(columns, rows)
 {
   var tbody = $(".crossword tbody");
   var row;
+  tbody.html('');
   for (var i = 0; i < rows; i++) {
     row = document.createElement("tr");
     for (var j = 0; j < columns; j++) {
