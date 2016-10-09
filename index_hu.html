@@ -16,28 +16,28 @@
     <nav class="navbar nav-tabs">
       <div class="container-fluid">
         <div class="navbar-header">
-        <a class="navbar-brand" href="#">crossword</a>
+        <a class="navbar-brand" href="#">keresztrejtvény</a>
         </div>
         <ul class="nav navbar-nav">
-        <li><a href="#" onclick="openTab(0)" class="active">Welcome</a></li>
-        <li><a href="#" onclick="openTab(1)">Step 1</a></li>
-        <li><a href="#" onclick="openTab(2)">Step 2</a></li>
-        <li><a href="#" onclick="openTab(3)">Result</a></li>
+          <li><a href="#" onclick="openTab(0)" class="active">Üdvözlet</a></li>
+          <li><a href="#" onclick="openTab(1)">Lépés 1</a></li>
+          <li><a href="#" onclick="openTab(2)">Lépés 2</a></li>
+          <li><a href="#" onclick="openTab(3)">Eredmény</a></li>
         </ul>
       </div>
     </nav>
       <div id="tab0" class="container tab activeTab">
         <div class="jumbotron">
-          <h1>crossword</h1>
-          <p>This app lets you create your own crossword, from a word list and an answer line.</p>
-          <button type="button" class="btn btn-success" onclick="openTab(1)">Let's start!</button>
+          <h1>keresztrejtvény</h1>
+          <p>Ezzel az alkalmazással létrehozhatsz egy keresztrejtvényt az általad megadott szavakból.</p>
+          <button type="button" class="btn btn-success" onclick="openTab(1)">Kezdjük!</button>
         </div>
 
       </div>
       <div id="tab1" class="container tab">
         <div class="jumbotron">
-          <h1>add words</h1>
-          <p>provide a list of words.</p>
+          <h1>szavak</h1>
+          <p>add meg a szavakat</p>
           <div class="row">
             <div class="col-sm-8">
               <ul id="words" class="list-group">
@@ -46,47 +46,47 @@
           </div>
           <div class="row">
             <div class="col-sm-8"><input type="text" class="form-control" pattern="[A-Za-záéűőúöüóí]+" onkeydown="if (event.keyCode==13) addWord();" id="new-word"></input></div>
-            <div class="col-sm-4" text-align="right"><button type="button" class="btn btn-info" onclick="addWord()">Add</button></div>
+            <div class="col-sm-4" text-align="right"><button type="button" class="btn btn-info" onclick="addWord()">Hozzáad</button></div>
           </div>
           <div class="row">
-            <p><div class="col-sm-4"><button type="button" class="btn btn-success" onclick="openTab(2)">Next</button></div></p>
+            <p><div class="col-sm-4"><button type="button" class="btn btn-success" onclick="openTab(2)">Következő</button></div></p>
           </div>
           <ul class="pager">
-            <li class="previous"><a href="#" onclick="openTab(0)">Previous</a></li>
+            <li class="previous"><a href="#" onclick="openTab(0)">Előző</a></li>
             <!-- <li class="next"><a href="#" onclick="openTab(2)">Next</a></li> -->
           </ul>
         </div>
       </div>
       <div id="tab2" class="container tab">
         <div class="jumbotron">
-          <h1>choose an answer</h1>
-          <p>choose wisely</p>
+          <h1><h1>add meg a fősort</h1></h1>
+          <!-- <p>choose wisely</p> -->
           <div class="row">
             <p><div class="col-sm-8"><input type="text" class="form-control" id="answer"></input></div></p>
           </div>
           <div class="row">
-            <p><div class="col-sm-8"><button type="button" class="btn btn-success right" onclick="openTab(3); doIt();">Do it!</button></div></p>
+            <p><div class="col-sm-8"><button type="button" class="btn btn-success right" onclick="openTab(3); doIt();">Csináld!</button></div></p>
           </div>
         </div>
         <ul class="pager">
-          <li class="previous"><a href="#" onclick="openTab(1)">Previous</a></li>
+          <li class="previous"><a href="#" onclick="openTab(1)">Előző</a></li>
         </ul>
       </div>
       <div id="tab3" class="container tab">
         <div class="jumbotron">
-          <h1>result</h1>
+          <h1>eredmény</h1>
             <div id="error-words" class="alert alert-danger alert-dismissible" role="alert" style="display: none;">
               <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
-              <strong>Error!</strong> Couldn't make a crossword from the given words
+              <strong>Hiba!</strong> Nem tudtam keresztrejtvényt csinálni a megadott szavakból
             </div>
           <table class="crossword">
             <tbody>
             </tbody>
           </table>
           <ul class="pager">
-            <li class="previous"><a href="#" onclick="openTab(1)">Back</a></li>
+            <li class="previous"><a href="#" onclick="openTab(1)">Vissza</a></li>
           </ul>
         </div>
 

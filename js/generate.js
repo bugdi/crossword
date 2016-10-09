@@ -1,10 +1,16 @@
 function createCrossword(wordList, answer)
 {
-  renderCrossword(findWord(wordList, answer, [], 0), answer);
+  findWordResult = findWord(wordList, answer, [], 0);
+  if(findWordResult === false)
+  {
+    $('#error-words').fadeIn();
+    return;
+  }
+  renderCrossword(findWordResult, answer);
 }
 String.prototype.replaceAt=function(index, character) {
     return this.substr(0, index) + character + this.substr(index+character.length);
-}
+};
 function convertLocalized(string)
 {
   for (var i = 0; i < string.length; i++) {
@@ -62,7 +68,7 @@ function getIndexesOf(wordList, char)
   return returnValue;
 }
 function clone(obj) {
-    if (null == obj || "object" != typeof obj) return obj;
+    if (null === obj || "object" != typeof obj) return obj;
     var copy = obj.constructor();
     for (var attr in obj) {
         if (obj.hasOwnProperty(attr)) copy[attr] = obj[attr];
@@ -73,7 +79,7 @@ function findWord(wordList, answer, result, location = 0)
 {
   var localWordList = clone(wordList);
   var matches = getIndexesOf(localWordList, answer[location]);
-  if(matches.length == 0)
+  if(matches.length === 0)
   {
     return false;
   } else if(matches.length == 1) {
@@ -90,8 +96,8 @@ function findWord(wordList, answer, result, location = 0)
       var multiLocal = clone(localWordList);
       var multiResult = clone(result);
       multiResult.push(multiLocal.splice(matches[i], 1)[0]);
-      var find = findWord(multiLocal, answer, multiResult, location + 1)
-      if(find != false || location == answer.length -  1)
+      var find = findWord(multiLocal, answer, multiResult, location + 1);
+      if(find !== false || location === answer.length -  1)
       {
         return find;
       }
