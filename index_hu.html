@@ -20,9 +20,9 @@
         </div>
         <ul class="nav navbar-nav">
         <li><a href="#" onclick="openTab(0)" class="active">Üdvözlet</a></li>
-        <li><a href="#" onclick="openTab(1)">Lépés 1</a></li>
-        <li><a href="#" onclick="openTab(2)">Lépés 2</a></li>
-        <li><a href="#" onclick="openTab(3)">Lépés 3</a></li>
+        <li><a href="#" onclick="openTab(1)">Első lépés</a></li>
+        <li><a href="#" onclick="openTab(2)">Második lépés</a></li>
+        <li><a href="#" onclick="openTab(3)">Eredmény</a></li>
         </ul>
       </div>
     </nav>
@@ -35,8 +35,8 @@
       </div>
       <div id="tab1" class="container tab">
         <div class="jumbotron">
-          <h1>add words</h1>
-          <p>add meg a szavakat</p>
+          <h1>add meg a szavakat</h1>
+          <p>Ezekből lesznek a melléksorok. Adj meg minél többet!</p>
           <div class="row">
             <div class="col-sm-8">
               <ul id="words" class="list-group">
@@ -63,9 +63,16 @@
       </div>
       <div id="tab3" class="container tab">
         <div class="jumbotron">
-          <h1>befejezés</h1>
+          <h1>eredmény</h1>
+          <div id="error-words" class="alert alert-danger alert-dismissible" role="alert" style="display: none;">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <strong>Hiba!</strong> Nem sikerült elkészítenem a keresztrejtvényt a megadott szavak alapján
+          </div>
           <table class="crossword">
             <tbody>
+
             </tbody>
           </table>
         </div>

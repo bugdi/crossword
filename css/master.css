@@ -17,16 +17,20 @@ body {
 .jumbotron {
   .background-color: #e6e6e6;
 }
-.active {
+.nav > li > a.active {
   background-color: #eee;
   text-decoration: none;
   text-align: center;
   color: #23527c;
 }
-.nav>li>a:focus, .nav>li>a:hover
+/*.nav > li > a, .nav > li > a
 {
-  background-color: inherit;
+
 }
+.nav > li > a:focus, .nav > li > a:hover
+{
+
+}*/
 a:focus, a:hover {
   /*color: inherit;*/
   color: #337ab7;

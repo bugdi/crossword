@@ -2,6 +2,7 @@ function openTab(index) {
   $(".tab").removeClass('activeTab');
   $("#tab" + index).addClass('activeTab');
   $("li > a").removeClass("active");
+  $("li > a").eq(index).addClass('active');
 }
 function addWord()
 {
@@ -9,6 +10,8 @@ function addWord()
   // item.classList.add('list-group-item');
   // item.innerText = "Ax";
   // item.style.display = "none";
+  if($('#new-word').val() === '' || $('#new-word').is(':invalid'))
+    return;
   var $item = $("<li></li>")
             .hide()
             .addClass('list-group-item')
@@ -25,6 +28,8 @@ function removeEvent(event)
 }
 function doIt()
 {
+  if($('#answer').val() === '' || $('#answer').is(':invalid'))
+    return;
   var wordsChildren = $("#words").children();
   var wordList = [];
   for (var i = 0; i < wordsChildren.length; i++) {
